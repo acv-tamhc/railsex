@@ -43,7 +43,7 @@ end
 
 group :test do 
   gem 'rspec-rails'
-  gem 'ow'
+  gem 'shoulda-matchers'
   gem 'factory_girl_rails'
 end
 
