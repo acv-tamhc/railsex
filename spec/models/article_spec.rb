@@ -74,7 +74,7 @@ RSpec.describe Article, type: :model do
 		it 'Increase number of like' do
 			article = Article.new(title: 'Article', content: 'Content', like: 20)
 			article.save!
-			expect(article.increase_like).to eq 21
+			expect(article.inscrease_like).to eq 21
 		end
 	end
 end

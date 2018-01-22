@@ -19,9 +19,9 @@ class Article < ApplicationRecord
 		self.texts.order(:order) + self.images.order(:order)
 	end
 
-	def increase_like
+	def inscrease_like
 		self.like.next
-		return self.like
+		#return self.like
 	end
 
 
