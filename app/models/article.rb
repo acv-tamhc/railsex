@@ -6,23 +6,11 @@ class Article < ApplicationRecord
 
 	has_many :texts, dependent: :destroy
 	has_many :images, dependent: :destroy
-
+	
 	def is_published
-		return self.created_at < DateTime.now.to_datetime
+		return self.created_at < Time.now.zone
 	end
-
-	def show_like
-		return self.like
-	end
-
-	def show_info
-		self.texts.order(:order) + self.images.order(:order)
-	end
-
 	def inscrease_like
 		self.like.next
-		#return self.like
 	end
-
-
 end

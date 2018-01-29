@@ -22,19 +22,6 @@ RSpec.describe Article, type: :model do
 
 		it { should validate_presence_of(:like) }
 
-		# it 'validates the presence of published' do
-		# 	article = Article.new(published: '')
-		# 	article.validate
-		# 	expect(article.errors.messages).to include(title: ["can't be blank"])
-		# end
-
-		# it 'The article must complete' do
-		# 	article = Arcticle.new(created_at: '2018-01-12 07:43:31')
-		# 	if(article.created_at == DateTime.now.to_datetime)
-		# 	expect(article.errors.messages).to include(title: ["The article not complete"])
-		# endpect(article.errors.messages).to include(title: ["The article not complete"])
-		# end
-
 		it 'Article was published' do
 			article = Article.new(title: 'IsPublish', content: 'Content', like: 1)
 			article.save!
@@ -57,20 +44,8 @@ RSpec.describe Article, type: :model do
 			expect(article.show_info).to eq [text2, text1]
 		end
 
-		# Multi text
 		it { should have_many(:texts) }
-
-		# it 'Get info from image and text' do
-		# 	article = Article.new(title: 'Article', content: 'content', like: 20)
-		# 	tex = Text.new(headline: 'text 01', sentence: 'sentence 01', order: 1, article_id: 1)
-		# 	text.save!
-		# 	# article.texts.create!(headline: 'text 01', sentence: 'text 01', order: 1, article_id: 1)
-		# 	#article.images.create!(headline: 'image 01', picture: 'image 01', order: 2, article_id: 1)
-		# 	images = Images.new(headline: 'image 01', picture: 'image 01', order: 2, article_id: 1)
-		# 	images.save!
-		# 	expect(article.get_info).to eq article.get_info
-		# end
-
+		
 		it 'Increase number of like' do
 			article = Article.new(title: 'Article', content: 'Content', like: 20)
 			article.save!
